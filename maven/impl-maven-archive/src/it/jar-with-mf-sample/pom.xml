@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Artifact Configuration -->
-    <groupId>org.jboss.shrinkwrap.resolver.test</groupId>
+    <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver.test</groupId>
     <artifactId>shrinkwrap-resolver-impl-maven-test-jar-sample</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>

@@ -65,7 +65,7 @@ class ClasspathWorkspaceReaderTestCase {
             final PomEquippedResolveStage resolver =
                     Maven.configureResolver().withClassPathResolution(false).loadPomFromFile("pom.xml");
             // Ensure we can disable ClassPath resolution
-            resolver.resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven").withoutTransitivity()
+            resolver.resolve("co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven").withoutTransitivity()
                     .asSingle(File.class);
             Assertions.fail("Reactor is not activated, resolution of another module should fail.");
         });
@@ -77,7 +77,7 @@ class ClasspathWorkspaceReaderTestCase {
 
         // Ensure we can use ClassPath resolution to get the results of the "current" build
         final PomEquippedResolveStage resolver = Maven.resolver().loadPomFromFile("pom.xml");
-        File[] files = resolver.resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven")
+        File[] files = resolver.resolve("co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven")
                 .withoutTransitivity().as(File.class);
         new ValidationUtil("shrinkwrap-resolver-api", "shrinkwrap-resolver-api-maven")
                 .validate(files);
@@ -89,7 +89,7 @@ class ClasspathWorkspaceReaderTestCase {
 
         // Ensure we can use ClassPath resolution to get the tests package of the "current" build
         final PomEquippedResolveStage resolver = Maven.resolver().loadPomFromFile("pom.xml");
-        File file = resolver.resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:jar:tests:?")
+        File file = resolver.resolve("co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:jar:tests:?")
                 .withoutTransitivity().asSingle(File.class);
 
         new ValidationUtil("shrinkwrap-resolver-api-maven").validate(file);
@@ -118,7 +118,7 @@ class ClasspathWorkspaceReaderTestCase {
 
         // Ensure we can use ClassPath resolution to get the tests package of the "current" build
         final PomEquippedResolveStage resolver = Maven.resolver().loadPomFromFile("pom.xml");
-        File file = resolver.resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:test-jar:tests:?")
+        File file = resolver.resolve("co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:test-jar:tests:?")
                 .withoutTransitivity().asSingle(File.class);
 
         new ValidationUtil("shrinkwrap-resolver-api-maven").validate(file);
@@ -150,7 +150,7 @@ class ClasspathWorkspaceReaderTestCase {
 
         // Ensure we can use ClassPath resolution to get the results of the "current" build
         final PomEquippedResolveStage resolver = Maven.resolver().loadPomFromFile("pom.xml");
-        File file = resolver.resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven")
+        File file = resolver.resolve("co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven")
                 .withoutTransitivity().asSingleFile();
 
 
@@ -173,11 +173,11 @@ class ClasspathWorkspaceReaderTestCase {
         // Get current version
         // Get version of current project
         String resolvedVersion = Maven.resolver().loadPomFromFile("pom.xml")
-                .resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven")
+                .resolve("co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven")
                 .withoutTransitivity().asSingleResolvedArtifact().getResolvedVersion();
 
         // Get resolver-api from classpath
-        File file = Maven.resolver().resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api:" + resolvedVersion)
+        File file = Maven.resolver().resolve("co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api:" + resolvedVersion)
                 .withoutTransitivity().asSingleFile();
 
         // check content of resolved jar, it should contain given class
@@ -205,6 +205,9 @@ class ClasspathWorkspaceReaderTestCase {
 
         // Resolve this project's current artifact (a different version) classpath (such that the ClassPathWorkspaceReader
         // picks it up)
+        // NOTE: This test resolves version 2.0.0-alpha-5 which only exists in Maven Central under the original
+        // groupId (org.jboss.shrinkwrap.resolver). Since this fork uses the groupId
+        // co.luminositylabs.oss.org.jboss.shrinkwrap.resolver, this test will fail unless the original groupId is used below.
         final MavenResolvedArtifact artifact = Maven.resolver().loadPomFromFile("pom.xml")
                 .resolve("org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven:" + expectedVersion)
                 .withoutTransitivity().asSingleResolvedArtifact();

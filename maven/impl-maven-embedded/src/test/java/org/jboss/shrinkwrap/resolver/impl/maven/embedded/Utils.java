@@ -188,7 +188,7 @@ public class Utils {
         Archive<?> defaultBuiltArchive = builtProject.getDefaultBuiltArchive();
         Assertions.assertEquals(archiveNameModuleTwoParamValue + ".ear", defaultBuiltArchive.getName());
 
-        verifyThatArchiveContains(defaultBuiltArchive, "/org.jboss.shrinkwrap.resolver-" + baseArchiveNameModuleOne + ".jar");
+        verifyThatArchiveContains(defaultBuiltArchive, "/co.luminositylabs.oss.org.jboss.shrinkwrap.resolver-" + baseArchiveNameModuleOne + ".jar");
         verifyThatArchiveContains(defaultBuiltArchive, "/commons-codec-commons-codec-1.22.0.jar");
 
         // there are no modules

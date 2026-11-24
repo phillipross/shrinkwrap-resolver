@@ -3,7 +3,7 @@
 
     <!-- Parent -->
     <parent>
-        <groupId>org.jboss.shrinkwrap.resolver</groupId>
+        <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
         <artifactId>shrinkwrap-resolver-parent</artifactId>
         <version>3.3.8-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
@@ -26,22 +26,22 @@
             <artifactId>shrinkwrap-impl-base</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-api-maven</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-api-maven-archive</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-spi-maven-archive</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
             <version>${project.version}</version>
         </dependency>

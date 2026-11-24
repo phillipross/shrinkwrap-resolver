@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.jboss.shrinkwrap.resolver</groupId>
+        <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
         <artifactId>shrinkwrap-resolver-parent</artifactId>
         <version>3.3.8-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
@@ -23,27 +23,27 @@
     <dependencies>
         <!-- ShrinkWrap Maven Resolver -->
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-spi</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-api-maven</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-spi-maven</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
             <version>${project.version}</version>
             <exclusions>
@@ -54,7 +54,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-impl-maven-archive</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -193,12 +193,12 @@
                         <configuration>
                             <extraArtifacts>
                                 <!-- depchain seems not be enough -->
-                                <extraArtifact>org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-depchain:${project.version}:pom</extraArtifact>
+                                <extraArtifact>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-depchain:${project.version}:pom</extraArtifact>
                                 <!-- we need to install poms, so Invoker will be able to resolve transitive dependencies -->
-                                <extraArtifact>org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api:${project.version}:pom</extraArtifact>
-                                <extraArtifact>org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:${project.version}:pom</extraArtifact>
-                                <extraArtifact>org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven:${project.version}:pom</extraArtifact>
-                                <extraArtifact>org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven-archive:${project.version}:pom</extraArtifact>
+                                <extraArtifact>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api:${project.version}:pom</extraArtifact>
+                                <extraArtifact>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:${project.version}:pom</extraArtifact>
+                                <extraArtifact>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven:${project.version}:pom</extraArtifact>
+                                <extraArtifact>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven-archive:${project.version}:pom</extraArtifact>
                             </extraArtifacts>
                         </configuration>
                     </execution>
@@ -225,7 +225,7 @@
                             <pluginExecutions>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                                        <groupId>co.luminositylabs.oss.org.jboss.shrinkwrap.resolver</groupId>
                                         <artifactId>shrinkwrap-resolver-maven-plugin</artifactId>
                                         <versionRange>[1.0.0-alpha-1-SNAPSHOT,)</versionRange>
                                         <goals>
